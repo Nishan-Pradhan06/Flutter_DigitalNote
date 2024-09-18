@@ -36,7 +36,7 @@ class TopicsList extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) => const NetWork(),
+                  builder: (context) => NetWork(),
                 ),
               );
             },
@@ -75,7 +75,7 @@ class TopicsList extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) => const OoP(),
+                  builder: (context) => OoP(),
                 ),
               );
             },
@@ -88,7 +88,7 @@ class TopicsList extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) => const SpM(),
+                  builder: (context) => SpM(),
                 ),
               );
             },
@@ -101,7 +101,7 @@ class TopicsList extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) => const TechNology(),
+                  builder: (context) => TechnologyChaper(),
                 ),
               );
             },

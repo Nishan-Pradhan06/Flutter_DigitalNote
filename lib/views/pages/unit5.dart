@@ -3,42 +3,12 @@ import 'package:computer_12/widgets/widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-
+import 'package:provider/provider.dart';
+import '../../providers/ad_provider.dart';
 import '../components/footer.dart';
 
-class OoP extends StatefulWidget {
-  const OoP({super.key});
-
-  @override
-  State<OoP> createState() => _OoPState();
-}
-
-class _OoPState extends State<OoP> {
-  late BannerAd _bannerAd;
-  bool _isAdLoaded = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _initBannerAd();
-  }
-
-  _initBannerAd() {
-    _bannerAd = BannerAd(
-      size: AdSize.banner,
-      adUnitId: 'ca-app-pub-3940256099942544/6300978111',
-      listener: BannerAdListener(
-        onAdLoaded: (ad) {
-          setState(() {
-            _isAdLoaded = true;
-          });
-        },
-        onAdFailedToLoad: (ad, error) {},
-      ),
-      request: const AdRequest(),
-    );
-    _bannerAd.load();
-  }
+class OoP extends StatelessWidget {
+  OoP({super.key});
 
   //defining the textstyle
   var headlineText = const TextStyle(
@@ -51,6 +21,7 @@ class _OoPState extends State<OoP> {
     color: Colors.black,
     fontSize: 17.0,
   );
+
   var pointStyleText = const TextStyle(
     color: Colors.black,
     fontWeight: FontWeight.bold,
@@ -59,6 +30,7 @@ class _OoPState extends State<OoP> {
 
   @override
   Widget build(BuildContext context) {
+    final adProvider = Provider.of<AdProvider>(context);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -464,14 +436,14 @@ class _OoPState extends State<OoP> {
             ),
           ],
         ),
-        bottomNavigationBar: _isAdLoaded
-            // ignore: sized_box_for_whitespace
-            ? Container(
-                height: _bannerAd.size.height.toDouble(),
-                width: _bannerAd.size.width.toDouble(),
-                child: AdWidget(ad: _bannerAd),
-              )
-            : const SizedBox(),
+        bottomNavigationBar:
+            adProvider.isAdLoaded && adProvider.bannerAd != null
+                ? SizedBox(
+                    height: adProvider.bannerAd!.size.height.toDouble(),
+                    width: adProvider.bannerAd!.size.width.toDouble(),
+                    child: AdWidget(ad: adProvider.bannerAd!),
+                  )
+                : const SizedBox(),
       ),
     );
   }

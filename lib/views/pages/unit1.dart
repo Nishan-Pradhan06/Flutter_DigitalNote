@@ -564,14 +564,14 @@ class DataBase extends StatelessWidget {
             ),
           ),
         ),
-        bottomNavigationBar: adProvider.isAdLoaded
-            // ignore: sized_box_for_whitespace
-            ? Container(
-                height: adProvider.bannerAd.size.height.toDouble(),
-                width: adProvider.bannerAd.size.width.toDouble(),
-                child: AdWidget(ad: adProvider.bannerAd),
-              )
-            : const SizedBox(),
+        bottomNavigationBar:
+            adProvider.isAdLoaded && adProvider.bannerAd != null
+                ? SizedBox(
+                    height: adProvider.bannerAd!.size.height.toDouble(),
+                    width: adProvider.bannerAd!.size.width.toDouble(),
+                    child: AdWidget(ad: adProvider.bannerAd!),
+                  )
+                : const SizedBox(),
       ),
     );
   }
