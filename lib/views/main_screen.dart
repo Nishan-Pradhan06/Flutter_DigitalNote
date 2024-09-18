@@ -1,45 +1,17 @@
-import 'package:flutter/material.dart';
-import 'package:computer_12/views/drawer/drawer.dart';
 import 'package:computer_12/views/topics/topics.dart';
+import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:provider/provider.dart';
+import '../providers/ad_provider.dart';
+import 'drawer/drawer.dart';
 
-class ActionButton extends StatefulWidget {
+class ActionButton extends StatelessWidget {
   const ActionButton({super.key});
 
   @override
-  State<ActionButton> createState() => _ActionButtonState();
-}
-
-class _ActionButtonState extends State<ActionButton> {
-  ValueNotifier<bool> isDialOpen = ValueNotifier(false);
-  late BannerAd _bannerAd;
-  bool _isAdLoaded = false;
-//////////advertisment code
-  @override
-  void initState() {
-    super.initState();
-    _initBannerAd();
-  }
-
-  _initBannerAd() {
-    _bannerAd = BannerAd(
-      size: AdSize.banner,
-      adUnitId: 'ca-app-pub-3940256099942544/6300978111',
-      listener: BannerAdListener(
-        onAdLoaded: (ad) {
-          setState(() {
-            _isAdLoaded = true;
-          });
-        },
-        onAdFailedToLoad: (ad, error) {},
-      ),
-      request: const AdRequest(),
-    );
-    _bannerAd.load();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final adProvider = Provider.of<AdProvider>(context);
+
     return Scaffold(
       appBar: AppBar(
         elevation: 40.0,
@@ -58,14 +30,12 @@ class _ActionButtonState extends State<ActionButton> {
         child: TopicsList(),
       ),
       backgroundColor: const Color.fromARGB(130, 173, 223, 241),
-
-      ///banner advertisment
-      bottomNavigationBar: _isAdLoaded
+      bottomNavigationBar: adProvider.isAdLoaded
           // ignore: sized_box_for_whitespace
           ? Container(
-              height: _bannerAd.size.height.toDouble(),
-              width: _bannerAd.size.width.toDouble(),
-              child: AdWidget(ad: _bannerAd),
+              height: adProvider.bannerAd.size.height.toDouble(),
+              width: adProvider.bannerAd.size.width.toDouble(),
+              child: AdWidget(ad: adProvider.bannerAd),
             )
           : const SizedBox(),
       drawer: const NavDrawer(),

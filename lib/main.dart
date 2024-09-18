@@ -1,8 +1,10 @@
+import 'package:computer_12/providers/ad_provider.dart';
 import 'package:computer_12/views/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:lottie/lottie.dart';
+import 'package:provider/provider.dart';
 
 /////initializing
 void main() {
@@ -17,32 +19,37 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        fontFamily: "Poppins",
-        useMaterial3: true,
-      ),
-      debugShowCheckedModeBanner: false, //removes debug banner
-      themeAnimationCurve: Curves.fastLinearToSlowEaseIn,
-      home: AnimatedSplashScreen(
-        splash: Column(
-          //starting splash  screen
-          children: [
-            Lottie.asset(
-              'images/loading.json',
-              height: 350,
-              width: 200,
-            ),
-          ],
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<AdProvider>(create: (_) => AdProvider()),
+      ],
+      child: MaterialApp(
+        theme: ThemeData(
+          fontFamily: "Poppins",
+          useMaterial3: true,
         ),
-        nextScreen: const MainScreen(),
-        // nextScreen: PageView(),
-        splashIconSize: 350,
-        duration: 4500,
-        splashTransition: SplashTransition.fadeTransition,
-        backgroundColor: Colors.white,
+        debugShowCheckedModeBanner: false, //removes debug banner
+        themeAnimationCurve: Curves.fastLinearToSlowEaseIn,
+        home: AnimatedSplashScreen(
+          splash: Column(
+            //starting splash  screen
+            children: [
+              Lottie.asset(
+                'images/loading.json',
+                height: 350,
+                width: 200,
+              ),
+            ],
+          ),
+          nextScreen: const MainScreen(),
+          // nextScreen: PageView(),
+          splashIconSize: 350,
+          duration: 4500,
+          splashTransition: SplashTransition.fadeTransition,
+          backgroundColor: Colors.white,
+        ),
+        // const HomeView()
       ),
-      // const HomeView()
     );
   }
 }

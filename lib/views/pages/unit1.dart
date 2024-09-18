@@ -6,45 +6,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:bulleted_list/bulleted_list.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:provider/provider.dart';
 
-class DataBase extends StatefulWidget {
+import '../../providers/ad_provider.dart';
+
+class DataBase extends StatelessWidget {
   const DataBase({super.key});
-
-  @override
-  State<DataBase> createState() => _DataBaseState();
-}
-
-class _DataBaseState extends State<DataBase> {
-  late BannerAd _bannerAd;
-  bool _isAdLoaded = false;
-
-  //advertisment
-  @override
-  void initState() {
-    super.initState();
-    _initBannerAd();
-  }
-
-  _initBannerAd() {
-    _bannerAd = BannerAd(
-      size: AdSize.banner,
-      adUnitId: 'ca-app-pub-3940256099942544/6300978111',
-      listener: BannerAdListener(
-        onAdLoaded: (ad) {
-          setState(() {
-            _isAdLoaded = true;
-          });
-        },
-        onAdFailedToLoad: (ad, error) {},
-      ),
-      request: const AdRequest(),
-    );
-    _bannerAd.load();
-  }
 
   ///content.............
   @override
   Widget build(BuildContext context) {
+     final adProvider = Provider.of<AdProvider>(context);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -592,12 +564,12 @@ class _DataBaseState extends State<DataBase> {
             ),
           ),
         ),
-        bottomNavigationBar: _isAdLoaded
+        bottomNavigationBar: adProvider.isAdLoaded
             // ignore: sized_box_for_whitespace
             ? Container(
-                height: _bannerAd.size.height.toDouble(),
-                width: _bannerAd.size.width.toDouble(),
-                child: AdWidget(ad: _bannerAd),
+                height: adProvider.bannerAd.size.height.toDouble(),
+                width: adProvider.bannerAd.size.width.toDouble(),
+                child: AdWidget(ad: adProvider.bannerAd),
               )
             : const SizedBox(),
       ),
