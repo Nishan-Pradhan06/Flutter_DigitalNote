@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:computer_12/drawer/drawer.dart';
-import 'package:computer_12/topics/topics.dart';
+import 'package:computer_12/views/drawer/drawer.dart';
+import 'package:computer_12/views/topics/topics.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class ActionButton extends StatefulWidget {

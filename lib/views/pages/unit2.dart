@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-import '../strings/string_unit2.dart';
+import '../../strings/string_unit2.dart';
 
 class NetWork extends StatefulWidget {
   const NetWork({super.key});
