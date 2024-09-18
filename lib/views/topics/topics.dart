@@ -1,3 +1,4 @@
+import 'package:computer_12/views/components/cards.dart';
 import 'package:flutter/material.dart';
 import 'package:computer_12/views/pages/unit1.dart';
 import 'package:computer_12/views/pages/unit2.dart';
@@ -7,41 +8,8 @@ import 'package:computer_12/views/pages/unit5.dart';
 import 'package:computer_12/views/pages/unit6.dart';
 import 'package:computer_12/views/pages/unit7.dart';
 
-class TopicsList extends StatefulWidget {
+class TopicsList extends StatelessWidget {
   const TopicsList({super.key});
-
-  @override
-  State<TopicsList> createState() => _TopicsListState();
-}
-
-class _TopicsListState extends State<TopicsList> {
-  ///start list view of topics.....
-  Widget buildCard(String text, VoidCallback onTapFunction) {
-    final screenSize = MediaQuery.of(context).size;
-    double textSize = screenSize.width * 0.04;
-    return GestureDetector(
-      onTap: () {
-        onTapFunction();
-      },
-      child: Card(
-        color: const Color(0xff618989),
-        elevation: 5.0,
-        child: Padding(
-          padding: const EdgeInsets.all(30.0),
-          child: Center(
-            child: Text(
-              text,
-              style: TextStyle(
-                fontSize: textSize,
-                fontWeight: FontWeight.bold,
-                color: Colors.black87,
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,13 +17,10 @@ class _TopicsListState extends State<TopicsList> {
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
       child: ListView(
-        children: <Widget>[
-          const SizedBox(
-            height: 8.0,
-          ),
-          buildCard(
-            'Database',
-            () {
+        children: [
+          TopicsCards(
+            title: 'DataBase',
+            onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => const DataBase(),
@@ -66,9 +31,9 @@ class _TopicsListState extends State<TopicsList> {
           const SizedBox(
             height: 8.0,
           ),
-          buildCard(
-            'Data Communication and Networking',
-            () {
+          TopicsCards(
+            title: 'Data Communication and Networking',
+            onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => const NetWork(),
@@ -79,9 +44,9 @@ class _TopicsListState extends State<TopicsList> {
           const SizedBox(
             height: 8.0,
           ),
-          buildCard(
-            'Web Techonology II',
-            () {
+          TopicsCards(
+            title: 'Web Techonology II',
+            onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => const WebDevelopment(),
@@ -92,9 +57,9 @@ class _TopicsListState extends State<TopicsList> {
           const SizedBox(
             height: 8.0,
           ),
-          buildCard(
-            'Programming in C',
-            () {
+          TopicsCards(
+            title: 'Programming in C',
+            onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => const ProgrammingC(),
@@ -105,9 +70,9 @@ class _TopicsListState extends State<TopicsList> {
           const SizedBox(
             height: 8.0,
           ),
-          buildCard(
-            'Objected Oriented Programming',
-            () {
+          TopicsCards(
+            title: 'Objected Oriented Programming',
+            onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => const OoP(),
@@ -118,9 +83,9 @@ class _TopicsListState extends State<TopicsList> {
           const SizedBox(
             height: 8.0,
           ),
-          buildCard(
-            'Software Process Model',
-            () {
+          TopicsCards(
+            title: 'Software Process Model',
+            onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => const SpM(),
@@ -131,15 +96,18 @@ class _TopicsListState extends State<TopicsList> {
           const SizedBox(
             height: 8.0,
           ),
-          buildCard(
-            'Recent Trends in Technology',
-            () {
+          TopicsCards(
+            title: 'Software Process Model',
+            onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => const TechNology(),
                 ),
               );
             },
+          ),
+          const SizedBox(
+            height: 8.0,
           ),
         ],
       ),
