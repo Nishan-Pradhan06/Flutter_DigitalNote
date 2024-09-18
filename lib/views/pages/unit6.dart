@@ -7,6 +7,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../widgets/widgets.dart';
+import '../components/footer.dart';
 
 class SpM extends StatefulWidget {
   const SpM({super.key});
@@ -639,7 +640,7 @@ class _SpMState extends State<SpM> {
                             contents:
                                 'A system flowchart plays vital role in system analysis. It illustrates the elements graphically and characteristics of a system, its structure and relationship in terms of flowchart symbol. A system flowchart is a diagram that shows a broad overview of the data flow and sequences of operation in a system. It is the graphical representation of a sequence of activities in a process of a system.',
                           ),
-                          const EndingText(),
+                          const Footer(),
                         ],
                       ),
                     ),

@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../components/footer.dart';
+
 class TechNology extends StatefulWidget {
   const TechNology({super.key});
 
@@ -987,14 +989,7 @@ class _TechNologyState extends State<TechNology> {
                         const SizedBox(
                           height: 20.0,
                         ),
-                        const Text(
-                          '***END***',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 24.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                        const Footer(),
                       ],
                     ),
                   ),

@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable, non_constant_identifier_names
 
+import 'package:computer_12/views/components/footer.dart';
 import 'package:computer_12/widgets/widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -583,7 +584,7 @@ class _DataBaseState extends State<DataBase> {
                       HeadingDetails(
                           contents:
                               "There are following responsibility of a database administrator:-\n\ni. DBA should give idea to an organization on deciding which department will be looking on maintenance and update of data in the database.\nii. DBA has to assure 24 hour access to each department in the organization that needs the data.\niii. DBA has to install and timely upgrade the data base server.\niv. DBA has to use storage space available for data in an effective manner.\nv. DBA has to make proper backup and also to develop recovery procedure in case the DBMS crashes/malfunctions.\nvi. DBA also has to make sure that database server is giving optimum performance.\nvii. DBA has to work with the developers and need to assist in designing the overall data base.\nviii. DBA has to manage all the user who use data base and determine proper security level for each user."),
-                      const EndingText(),
+                      const Footer(),
                     ],
                   ),
                 ),

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../../widgets/widgets.dart';
+import '../components/footer.dart';
 import '../components/headings.dart';
 
 class WebDevelopment extends StatefulWidget {
@@ -456,6 +457,7 @@ class _WebDevelopmentState extends State<WebDevelopment> {
                           HeadingDetails(
                               contents:
                                   'DCL provides additional feature for security of table and database. It includes commands for controlling data and access to the database. Some of the example of this command are GRANT, COMMIT etc.'),
+                          const Footer(),
                         ],
                       ),
                     ),

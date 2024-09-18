@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
+import '../components/footer.dart';
+
 class OoP extends StatefulWidget {
   const OoP({super.key});
 
@@ -452,7 +454,7 @@ class _OoPState extends State<OoP> {
                           const SizedBox(
                             height: 6.0,
                           ),
-                          const EndingText(),
+                          const Footer(),
                         ],
                       ),
                     ),
