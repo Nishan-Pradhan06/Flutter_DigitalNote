@@ -5,6 +5,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
+import '../components/headings.dart';
+
 class ProgrammingC extends StatefulWidget {
   const ProgrammingC({super.key});
 
@@ -64,8 +66,7 @@ class _ProgrammingCState extends State<ProgrammingC> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
-                          TopicsHeadings(
-                            sources: 'Sources: Buddha Publication Pvt. Ltd.',
+                          const TopicsHeadings(
                             unit: 'Programming in C',
                           ),
                           const SizedBox(

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../../widgets/widgets.dart';
+import '../components/headings.dart';
 
 class WebDevelopment extends StatefulWidget {
   const WebDevelopment({super.key});
@@ -62,9 +63,8 @@ class _WebDevelopmentState extends State<WebDevelopment> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
-                          TopicsHeadings(
+                          const TopicsHeadings(
                             unit: 'Web Technology',
-                            sources: 'Sources: Buddha Publication Pvt. Ltd.',
                           ),
                           const SizedBox(
                             height: 16.0,
