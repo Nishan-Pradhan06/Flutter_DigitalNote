@@ -1,14 +1,10 @@
 // ignore_for_file: deprecated_member_use
-
-import 'package:computer_12/providers/ad_provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 import '../../widgets/widgets.dart';
+import '../components/banner_ad_components.dart';
 import '../components/footer.dart';
 
 class SpM extends StatelessWidget {
@@ -30,7 +26,6 @@ class SpM extends StatelessWidget {
   /////main content
   @override
   Widget build(BuildContext context) {
-    final adProvider = Provider.of<AdProvider>(context);
     return SafeArea(
       top: true,
       child: Scaffold(
@@ -623,14 +618,7 @@ class SpM extends StatelessWidget {
             ),
           ],
         ),
-        bottomNavigationBar:
-            adProvider.isAdLoaded && adProvider.bannerAd != null
-                ? SizedBox(
-                    height: adProvider.bannerAd!.size.height.toDouble(),
-                    width: adProvider.bannerAd!.size.width.toDouble(),
-                    child: AdWidget(ad: adProvider.bannerAd!),
-                  )
-                : const SizedBox(),
+        bottomNavigationBar: const BannerAdComponents(),
       ),
     );
   }

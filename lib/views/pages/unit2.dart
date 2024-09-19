@@ -1,12 +1,9 @@
 // import 'package:computer_12/Contains/unit3.dart';
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
-import '../../providers/ad_provider.dart';
 import '../../strings/string_unit2.dart';
+import '../components/banner_ad_components.dart';
 import '../components/footer.dart';
 
 class NetWork extends StatelessWidget {
@@ -32,7 +29,6 @@ class NetWork extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     final adProvider = Provider.of<AdProvider>(context);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -1418,14 +1414,7 @@ class NetWork extends StatelessWidget {
             ),
           ],
         ),
-         bottomNavigationBar:
-            adProvider.isAdLoaded && adProvider.bannerAd != null
-                ? SizedBox(
-                    height: adProvider.bannerAd!.size.height.toDouble(),
-                    width: adProvider.bannerAd!.size.width.toDouble(),
-                    child: AdWidget(ad: adProvider.bannerAd!),
-                  )
-                : const SizedBox(),
+          bottomNavigationBar: const BannerAdComponents(),
       ),
     );
   }

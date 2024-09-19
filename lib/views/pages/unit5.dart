@@ -2,9 +2,8 @@ import 'package:computer_12/strings/string_unit2.dart';
 import 'package:computer_12/widgets/widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
-import '../../providers/ad_provider.dart';
+import '../components/banner_ad_components.dart';
 import '../components/footer.dart';
 
 class OoP extends StatelessWidget {
@@ -30,7 +29,6 @@ class OoP extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final adProvider = Provider.of<AdProvider>(context);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -436,14 +434,7 @@ class OoP extends StatelessWidget {
             ),
           ],
         ),
-        bottomNavigationBar:
-            adProvider.isAdLoaded && adProvider.bannerAd != null
-                ? SizedBox(
-                    height: adProvider.bannerAd!.size.height.toDouble(),
-                    width: adProvider.bannerAd!.size.width.toDouble(),
-                    child: AdWidget(ad: adProvider.bannerAd!),
-                  )
-                : const SizedBox(),
+        bottomNavigationBar: const BannerAdComponents(),
       ),
     );
   }
