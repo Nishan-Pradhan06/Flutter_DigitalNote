@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../strings/string_unit2.dart';
-import '../components/banner_ad.dart';
+import '../components/banner_ad_helper.dart';
 import '../components/footer.dart';
 
 class NetWork extends StatelessWidget {
-   NetWork({super.key});
+  NetWork({super.key});
 
 //defining the textstyle
   var headlineText = const TextStyle(
@@ -162,7 +162,8 @@ class NetWork extends StatelessWidget {
                             textAlign: TextAlign.justify,
                             style: pragraphStyleText,
                           ),
-                          Image.asset("images/unit_2/full-duplex.jpg"),
+                          Image.asset("images/unit_2/fullDuplex.png"),
+                          // Image.asset("images/unit_2/full-duplex.jpg"),
                           Text(
                             example3,
                             textAlign: TextAlign.center,
@@ -1412,7 +1413,7 @@ class NetWork extends StatelessWidget {
             ),
           ],
         ),
-          bottomNavigationBar: const BannerAdComponents(),
+        bottomNavigationBar: const BannerAdHelper(),
       ),
     );
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../widgets/widgets.dart';
-import '../components/banner_ad.dart';
+import '../components/banner_ad_helper.dart';
 import '../components/footer.dart';
 import '../components/headings.dart';
 
@@ -436,7 +436,7 @@ class WebDevelopment extends StatelessWidget {
             )
           ],
         ),
-        bottomNavigationBar: const BannerAdComponents(),
+       bottomNavigationBar: const BannerAdHelper(),
       ),
     );
   }
