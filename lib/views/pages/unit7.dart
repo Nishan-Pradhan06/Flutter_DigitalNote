@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../components/banner_ad_components.dart';
+import '../components/app_bar.dart';
+import '../components/banner_ad_helper.dart';
 import '../components/footer.dart';
 
 class TechnologyChaper extends StatelessWidget {
@@ -25,13 +26,8 @@ class TechnologyChaper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 25.0,
-        backgroundColor: const Color(0xff618989),
-        centerTitle: true,
-        title: const Text('Unit 7',
-            style: TextStyle(fontSize: 30, color: Colors.white)),
-        toolbarHeight: 60.0,
+       appBar: const CustomAppBar(
+        titleText: 'Unit 7',
       ),
       body: PageView(
         children: [
@@ -969,7 +965,7 @@ class TechnologyChaper extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: const BannerAdComponents(),
+      bottomNavigationBar: const BannerAdHelper(),
     );
   }
 }
