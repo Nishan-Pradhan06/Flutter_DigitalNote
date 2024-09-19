@@ -2,7 +2,7 @@
 
 import 'package:facebook_audience_network/facebook_audience_network.dart';
 
-class FacebookAdsManager {
+class InterstitialAdManager {
   // Function to load and show the interstitial ad
   static void loadAndShowInterstitialAd() {
     FacebookInterstitialAd.loadInterstitialAd(
