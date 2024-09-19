@@ -1,11 +1,12 @@
 // ignore_for_file: must_be_immutable, non_constant_identifier_names
 
+import 'package:computer_12/views/components/banner_ad_helper.dart';
 import 'package:computer_12/views/components/footer.dart';
 import 'package:computer_12/widgets/widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:bulleted_list/bulleted_list.dart';
-import '../components/banner_ad_components.dart';
+import '../components/banner_ad.dart';
 
 class DataBase extends StatelessWidget {
   const DataBase({super.key});
@@ -560,7 +561,7 @@ class DataBase extends StatelessWidget {
             ),
           ),
         ),
-        bottomNavigationBar: const BannerAdComponents(),
+        bottomNavigationBar: const BannerAdHelper(),
       ),
     );
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../strings/string_unit2.dart';
-import '../components/banner_ad_components.dart';
+import '../components/banner_ad.dart';
 import '../components/footer.dart';
 
 class NetWork extends StatelessWidget {

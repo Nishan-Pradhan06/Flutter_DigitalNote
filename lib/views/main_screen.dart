@@ -1,6 +1,6 @@
+import 'package:computer_12/views/components/banner_ad_helper.dart';
 import 'package:computer_12/views/topics/topics.dart';
 import 'package:flutter/material.dart';
-import 'components/banner_ad_components.dart';
 import 'drawer/drawer.dart';
 
 class ActionButton extends StatelessWidget {
@@ -8,7 +8,6 @@ class ActionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         elevation: 40.0,
@@ -27,7 +26,7 @@ class ActionButton extends StatelessWidget {
         child: TopicsList(),
       ),
       backgroundColor: const Color.fromARGB(130, 173, 223, 241),
-     bottomNavigationBar: const BannerAdComponents(),
+      bottomNavigationBar:const BannerAdHelper(),
       drawer: const NavDrawer(),
     );
   }
