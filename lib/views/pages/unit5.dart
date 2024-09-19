@@ -2,7 +2,6 @@ import 'package:computer_12/strings/string_unit2.dart';
 import 'package:computer_12/widgets/widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import '../components/banner_ad_components.dart';
 import '../components/footer.dart';
 

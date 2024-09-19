@@ -21,7 +21,6 @@ dependencies:
   bulleted_list: ^0.0.1+0.1a
   google_mobile_ads: ^4.0.0
   url_launcher: ^6.1.5
-  provider: ^6.1.2
 
 dev_dependencies:
   flutter_test:
