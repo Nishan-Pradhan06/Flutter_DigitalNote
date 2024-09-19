@@ -1,46 +1,37 @@
-// import 'package:facebook_audience_network/facebook_audience_network.dart';
+import 'package:facebook_audience_network/ad/ad_interstitial.dart';
+import 'package:flutter/material.dart';
 
-// class InterstitialAdHelper {
-//   static bool _isInterstitialAdLoaded = false;
+class InterstitialAdManager {
+  // Function to load and show the interstitial ad with a callback for when the ad is done loading
+  static void loadAndShowInterstitialAd(
+      BuildContext context, VoidCallback onAdComplete) {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) {
+        return const Center(
+          child: CircularProgressIndicator(
+            color: Color(0xff618989),
+          ),
+        );
+      },
+    );
 
-//   static void loadInterstitialAd() {
-//     FacebookAudienceNetwork.init(
-//       testingId: "YOUR_TESTING_ID", // Optional for testing
-//     );
-
-//     FacebookInterstitialAd.loadInterstitialAd(
-//       placementId: "IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID",
-//       listener: (result, value) {
-//         if (result == InterstitialAdResult.LOADED) {
-//           _isInterstitialAdLoaded = true;
-//         } else if (result == InterstitialAdResult.DISMISSED ||
-//             result == InterstitialAdResult.ERROR) {
-//           _isInterstitialAdLoaded = false;
-//           loadInterstitialAd(); // Reload the ad after dismissal or error
-//         }
-//       },
-//     );
-//   }
-
-//   static void showInterstitialAd(Function onAdDismissed) {
-//     if (_isInterstitialAdLoaded) {
-//       FacebookInterstitialAd.showInterstitialAd(
-//         listener: (result, value) {
-//           if (result == InterstitialAdResult.DISMISSED ||
-//               result == InterstitialAdResult.ERROR) {
-//             _isInterstitialAdLoaded = false;
-//             loadInterstitialAd(); // Reload the ad after dismissal
-//             onAdDismissed(); // Perform the navigation after ad is dismissed
-//           }
-//         },
-//       );
-//     } else {
-//       onAdDismissed(); // If ad is not loaded, proceed with the navigation
-//     }
-//   }
-
-//   static void disposeAd() {
-//     FacebookInterstitialAd
-//         .destroyInterstitialAd(); // Destroy ad when no longer needed
-//   }
-// }
+    FacebookInterstitialAd.loadInterstitialAd(
+      placementId: "IMG_16_9_APP_INSTALL#299486252083346_299911042040867",
+      listener: (result, value) {
+        if (result == InterstitialAdResult.LOADED) {
+          Navigator.of(context).pop(); // Close the loading dialog
+          FacebookInterstitialAd.showInterstitialAd();
+          Future.delayed(const Duration(milliseconds: 500),
+              onAdComplete); // Call callback after the ad
+        } else if (result == InterstitialAdResult.DISMISSED ||
+            result == InterstitialAdResult.ERROR) {
+          Navigator.of(context)
+              .pop(); // Close the loading dialog in case of error or dismissal
+          onAdComplete(); // Continue to the next page if the ad fails or is dismissed
+        }
+      },
+    );
+  }
+}

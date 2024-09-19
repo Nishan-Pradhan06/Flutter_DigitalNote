@@ -1,13 +1,13 @@
 import 'package:computer_12/views/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
+
 import 'package:lottie/lottie.dart';
 
 /////initializing
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  MobileAds.instance.initialize();
+
+ 
   runApp(const MyApp());
 }
 
