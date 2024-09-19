@@ -7,10 +7,20 @@ import 'package:computer_12/views/pages/unit4.dart';
 import 'package:computer_12/views/pages/unit5.dart';
 import 'package:computer_12/views/pages/unit6.dart';
 import 'package:computer_12/views/pages/unit7.dart';
+
 import '../components/interstitial_ad.dart';
 
 class TopicsList extends StatelessWidget {
   const TopicsList({super.key});
+
+  // Function to navigate after the ad
+  void navigateToPage(BuildContext context, Widget page) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => page,
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +32,9 @@ class TopicsList extends StatelessWidget {
           TopicsCards(
             title: 'DataBase',
             onPressed: () {
-              InterstitialAdManager.loadAndShowInterstitialAd();
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const DataBase(),
-                ),
-              );
+              InterstitialAdManager.loadAndShowInterstitialAd(context, () {
+                navigateToPage(context, const DataBase());
+              });
             },
           ),
           const SizedBox(
@@ -36,26 +43,20 @@ class TopicsList extends StatelessWidget {
           TopicsCards(
             title: 'Data Communication and Networking',
             onPressed: () {
-              InterstitialAdManager.loadAndShowInterstitialAd();
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => NetWork(),
-                ),
-              );
+              InterstitialAdManager.loadAndShowInterstitialAd(context, () {
+                navigateToPage(context, NetWork());
+              });
             },
           ),
           const SizedBox(
             height: 8.0,
           ),
           TopicsCards(
-            title: 'Web Techonology II',
+            title: 'Web Technology II',
             onPressed: () {
-              InterstitialAdManager.loadAndShowInterstitialAd();
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const WebDevelopment(),
-                ),
-              );
+              InterstitialAdManager.loadAndShowInterstitialAd(context, () {
+                navigateToPage(context, const WebDevelopment());
+              });
             },
           ),
           const SizedBox(
@@ -64,12 +65,9 @@ class TopicsList extends StatelessWidget {
           TopicsCards(
             title: 'Programming in C',
             onPressed: () {
-              InterstitialAdManager.loadAndShowInterstitialAd();
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const ProgrammingC(),
-                ),
-              );
+              InterstitialAdManager.loadAndShowInterstitialAd(context, () {
+                navigateToPage(context, const ProgrammingC());
+              });
             },
           ),
           const SizedBox(
@@ -78,12 +76,9 @@ class TopicsList extends StatelessWidget {
           TopicsCards(
             title: 'Objected Oriented Programming',
             onPressed: () {
-              InterstitialAdManager.loadAndShowInterstitialAd();
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => OoP(),
-                ),
-              );
+              InterstitialAdManager.loadAndShowInterstitialAd(context, () {
+                navigateToPage(context, OoP());
+              });
             },
           ),
           const SizedBox(
@@ -92,26 +87,20 @@ class TopicsList extends StatelessWidget {
           TopicsCards(
             title: 'Software Process Model',
             onPressed: () {
-              InterstitialAdManager.loadAndShowInterstitialAd();
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => SpM(),
-                ),
-              );
+              InterstitialAdManager.loadAndShowInterstitialAd(context, () {
+                navigateToPage(context, SpM());
+              });
             },
           ),
           const SizedBox(
             height: 8.0,
           ),
           TopicsCards(
-            title: 'Software Process Model',
+            title: 'Recent Trend in Technology',
             onPressed: () {
-              InterstitialAdManager.loadAndShowInterstitialAd();
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => TechnologyChaper(),
-                ),
-              );
+              InterstitialAdManager.loadAndShowInterstitialAd(context, () {
+                navigateToPage(context, TechnologyChaper());
+              });
             },
           ),
           const SizedBox(
