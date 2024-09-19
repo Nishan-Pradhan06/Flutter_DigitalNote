@@ -1,45 +1,11 @@
-// import 'package:computer_12/Contains/unit3.dart';
-
-import 'package:computer_12/widgets/widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
+import '../../strings/string_unit2.dart';
+import '../components/banner_ad_components.dart';
+import '../components/footer.dart';
 
-import '../strings/string_unit2.dart';
-
-class NetWork extends StatefulWidget {
-  const NetWork({super.key});
-
-  @override
-  State<NetWork> createState() => _NetWorkState();
-}
-
-class _NetWorkState extends State<NetWork> {
-  late BannerAd _bannerAd;
-  bool _isAdLoaded = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _initBannerAd();
-  }
-
-  _initBannerAd() {
-    _bannerAd = BannerAd(
-      size: AdSize.banner,
-      adUnitId: 'ca-app-pub-3940256099942544/6300978111',
-      listener: BannerAdListener(
-        onAdLoaded: (ad) {
-          setState(() {
-            _isAdLoaded = true;
-          });
-        },
-        onAdFailedToLoad: (ad, error) {},
-      ),
-      request: const AdRequest(),
-    );
-    _bannerAd.load();
-  }
+class NetWork extends StatelessWidget {
+   NetWork({super.key});
 
 //defining the textstyle
   var headlineText = const TextStyle(
@@ -52,6 +18,7 @@ class _NetWorkState extends State<NetWork> {
     color: Colors.black,
     fontSize: 17.0,
   );
+
   var pointStyleText = const TextStyle(
     color: Colors.black,
     fontWeight: FontWeight.bold,
@@ -1435,7 +1402,7 @@ class _NetWorkState extends State<NetWork> {
                           const SizedBox(
                             height: 20.0,
                           ),
-                          const EndingText(),
+                          const Footer(),
                         ],
                       ),
                     ),
@@ -1445,14 +1412,7 @@ class _NetWorkState extends State<NetWork> {
             ),
           ],
         ),
-        bottomNavigationBar: _isAdLoaded
-            // ignore: sized_box_for_whitespace
-            ? Container(
-                height: _bannerAd.size.height.toDouble(),
-                width: _bannerAd.size.width.toDouble(),
-                child: AdWidget(ad: _bannerAd),
-              )
-            : const SizedBox(),
+          bottomNavigationBar: const BannerAdComponents(),
       ),
     );
   }

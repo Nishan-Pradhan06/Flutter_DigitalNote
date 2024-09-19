@@ -1,46 +1,14 @@
 // ignore_for_file: deprecated_member_use
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../../widgets/widgets.dart';
+import '../components/banner_ad_components.dart';
+import '../components/footer.dart';
 
-import '../widgets/widgets.dart';
-
-class SpM extends StatefulWidget {
-  const SpM({super.key});
-
-  @override
-  State<SpM> createState() => _SpMState();
-}
-
-class _SpMState extends State<SpM> {
-  late BannerAd _bannerAd;
-  bool _isAdLoaded = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _initBannerAd();
-  }
-
-  _initBannerAd() {
-    _bannerAd = BannerAd(
-      size: AdSize.banner,
-      adUnitId: 'ca-app-pub-3940256099942544/6300978111',
-      listener: BannerAdListener(
-        onAdLoaded: (ad) {
-          setState(() {
-            _isAdLoaded = true;
-          });
-        },
-        onAdFailedToLoad: (ad, error) {},
-      ),
-      request: const AdRequest(),
-    );
-    _bannerAd.load();
-  }
+class SpM extends StatelessWidget {
+   SpM({super.key});
 
 // custom text style and text color
   var defaultText = const TextStyle(
@@ -48,6 +16,7 @@ class _SpMState extends State<SpM> {
     fontSize: 14.0,
     fontStyle: FontStyle.italic,
   );
+
   var linkText = const TextStyle(
     color: Colors.blue,
     fontSize: 14.0,
@@ -639,7 +608,7 @@ class _SpMState extends State<SpM> {
                             contents:
                                 'A system flowchart plays vital role in system analysis. It illustrates the elements graphically and characteristics of a system, its structure and relationship in terms of flowchart symbol. A system flowchart is a diagram that shows a broad overview of the data flow and sequences of operation in a system. It is the graphical representation of a sequence of activities in a process of a system.',
                           ),
-                          const EndingText(),
+                          const Footer(),
                         ],
                       ),
                     ),
@@ -649,14 +618,7 @@ class _SpMState extends State<SpM> {
             ),
           ],
         ),
-        bottomNavigationBar: _isAdLoaded
-            // ignore: sized_box_for_whitespace
-            ? Container(
-                height: _bannerAd.size.height.toDouble(),
-                width: _bannerAd.size.width.toDouble(),
-                child: AdWidget(ad: _bannerAd),
-              )
-            : const SizedBox(),
+        bottomNavigationBar: const BannerAdComponents(),
       ),
     );
   }

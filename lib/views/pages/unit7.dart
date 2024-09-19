@@ -1,42 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../components/banner_ad_components.dart';
+import '../components/footer.dart';
 
-class TechNology extends StatefulWidget {
-  const TechNology({super.key});
-
-  @override
-  State<TechNology> createState() => _TechNologyState();
-}
-
-class _TechNologyState extends State<TechNology> {
-  late BannerAd _bannerAd;
-  bool _isAdLoaded = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _initBannerAd();
-  }
-
-  _initBannerAd() {
-    _bannerAd = BannerAd(
-      size: AdSize.banner,
-      adUnitId: 'ca-app-pub-3940256099942544/6300978111',
-      listener: BannerAdListener(
-        onAdLoaded: (ad) {
-          setState(() {
-            _isAdLoaded = true;
-          });
-        },
-        onAdFailedToLoad: (ad, error) {},
-      ),
-      request: const AdRequest(),
-    );
-    _bannerAd.load();
-  }
+class TechnologyChaper extends StatelessWidget {
+  TechnologyChaper({super.key});
 
   var defaultText = const TextStyle(
     color: Colors.black,
@@ -44,12 +14,14 @@ class _TechNologyState extends State<TechNology> {
     fontStyle: FontStyle.italic,
     fontFamily: "Ubuntu",
   );
+
   var linkText = const TextStyle(
     color: Colors.blue,
     fontSize: 14.0,
     fontStyle: FontStyle.italic,
     fontFamily: "Ubuntu",
   );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -987,14 +959,7 @@ class _TechNologyState extends State<TechNology> {
                         const SizedBox(
                           height: 20.0,
                         ),
-                        const Text(
-                          '***END***',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 24.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                        const Footer(),
                       ],
                     ),
                   ),
@@ -1004,14 +969,7 @@ class _TechNologyState extends State<TechNology> {
           ),
         ],
       ),
-      bottomNavigationBar: _isAdLoaded
-          // ignore: sized_box_for_whitespace
-          ? Container(
-              height: _bannerAd.size.height.toDouble(),
-              width: _bannerAd.size.width.toDouble(),
-              child: AdWidget(ad: _bannerAd),
-            )
-          : const SizedBox(),
+      bottomNavigationBar: const BannerAdComponents(),
     );
   }
 }

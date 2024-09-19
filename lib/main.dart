@@ -1,4 +1,4 @@
-import 'package:computer_12/mainscreen/main_screen.dart';
+import 'package:computer_12/views/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -36,7 +36,6 @@ class MyApp extends StatelessWidget {
           ],
         ),
         nextScreen: const MainScreen(),
-        // nextScreen: PageView(),
         splashIconSize: 350,
         duration: 4500,
         splashTransition: SplashTransition.fadeTransition,

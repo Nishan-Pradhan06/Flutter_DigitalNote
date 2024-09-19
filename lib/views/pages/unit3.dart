@@ -1,41 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
-import '../widgets/widgets.dart';
+import '../../widgets/widgets.dart';
+import '../components/banner_ad_components.dart';
+import '../components/footer.dart';
+import '../components/headings.dart';
 
-class WebDevelopment extends StatefulWidget {
+class WebDevelopment extends StatelessWidget {
   const WebDevelopment({super.key});
-
-  @override
-  State<WebDevelopment> createState() => _WebDevelopmentState();
-}
-
-class _WebDevelopmentState extends State<WebDevelopment> {
-  late BannerAd _bannerAd;
-  bool _isAdLoaded = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _initBannerAd();
-  }
-
-  _initBannerAd() {
-    _bannerAd = BannerAd(
-      size: AdSize.banner,
-      adUnitId: 'ca-app-pub-3940256099942544/6300978111',
-      listener: BannerAdListener(
-        onAdLoaded: (ad) {
-          setState(() {
-            _isAdLoaded = true;
-          });
-        },
-        onAdFailedToLoad: (ad, error) {},
-      ),
-      request: const AdRequest(),
-    );
-    _bannerAd.load();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -62,9 +33,8 @@ class _WebDevelopmentState extends State<WebDevelopment> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
-                          TopicsHeadings(
+                          const TopicsHeadings(
                             unit: 'Web Technology',
-                            sources: 'Sources: Buddha Publication Pvt. Ltd.',
                           ),
                           const SizedBox(
                             height: 16.0,
@@ -456,6 +426,7 @@ class _WebDevelopmentState extends State<WebDevelopment> {
                           HeadingDetails(
                               contents:
                                   'DCL provides additional feature for security of table and database. It includes commands for controlling data and access to the database. Some of the example of this command are GRANT, COMMIT etc.'),
+                          const Footer(),
                         ],
                       ),
                     ),
@@ -465,13 +436,7 @@ class _WebDevelopmentState extends State<WebDevelopment> {
             )
           ],
         ),
-        bottomNavigationBar: _isAdLoaded
-            ? SizedBox(
-                height: _bannerAd.size.height.toDouble(),
-                width: _bannerAd.size.width.toDouble(),
-                child: AdWidget(ad: _bannerAd),
-              )
-            : const SizedBox(),
+        bottomNavigationBar: const BannerAdComponents(),
       ),
     );
   }
