@@ -8,6 +8,8 @@ import 'package:computer_12/views/pages/unit5.dart';
 import 'package:computer_12/views/pages/unit6.dart';
 import 'package:computer_12/views/pages/unit7.dart';
 
+import '../components/interstitial_ad.dart';
+
 class TopicsList extends StatelessWidget {
   const TopicsList({super.key});
 
@@ -21,6 +23,7 @@ class TopicsList extends StatelessWidget {
           TopicsCards(
             title: 'DataBase',
             onPressed: () {
+              FacebookAdsManager.loadAndShowInterstitialAd();
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => const DataBase(),
@@ -34,6 +37,7 @@ class TopicsList extends StatelessWidget {
           TopicsCards(
             title: 'Data Communication and Networking',
             onPressed: () {
+              FacebookAdsManager.loadAndShowInterstitialAd();
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => NetWork(),
@@ -47,6 +51,7 @@ class TopicsList extends StatelessWidget {
           TopicsCards(
             title: 'Web Techonology II',
             onPressed: () {
+              FacebookAdsManager.loadAndShowInterstitialAd();
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => const WebDevelopment(),
@@ -60,6 +65,7 @@ class TopicsList extends StatelessWidget {
           TopicsCards(
             title: 'Programming in C',
             onPressed: () {
+              FacebookAdsManager.loadAndShowInterstitialAd();
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => const ProgrammingC(),
@@ -73,6 +79,7 @@ class TopicsList extends StatelessWidget {
           TopicsCards(
             title: 'Objected Oriented Programming',
             onPressed: () {
+              FacebookAdsManager.loadAndShowInterstitialAd();
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => OoP(),
@@ -86,6 +93,7 @@ class TopicsList extends StatelessWidget {
           TopicsCards(
             title: 'Software Process Model',
             onPressed: () {
+              FacebookAdsManager.loadAndShowInterstitialAd();
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => SpM(),
@@ -99,6 +107,7 @@ class TopicsList extends StatelessWidget {
           TopicsCards(
             title: 'Software Process Model',
             onPressed: () {
+              FacebookAdsManager.loadAndShowInterstitialAd();
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => TechnologyChaper(),
