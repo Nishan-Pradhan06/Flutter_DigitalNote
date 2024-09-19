@@ -163,7 +163,6 @@ class NetWork extends StatelessWidget {
                             style: pragraphStyleText,
                           ),
                           Image.asset("images/unit_2/fullDuplex.png"),
-                          // Image.asset("images/unit_2/full-duplex.jpg"),
                           Text(
                             example3,
                             textAlign: TextAlign.center,
