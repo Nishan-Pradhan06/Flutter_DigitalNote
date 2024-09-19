@@ -43,8 +43,7 @@ class WebDevelopment extends StatelessWidget {
                           contents:
                               'Web technology is the tools and techniques which enables two or more computing devices to communicate over a network i.e. Internet. Web Technology consist of two words, the web refers to the World Wide Web generally known as World Wide Web. WWW is the cyber space containing webpages, documents, and any other resources which are identified and located with the help of their URLs. Technology refers to the tools and techniques that makes these resources available on the Web such as, web browsers to view content of web, Programming languages and frameworks for the development of websites, Database to store data at back end, protocols for communicating on the web, multimedia elements etc.\n\nWeb development is the process of designing and developing website which are hosted through internet or intranet. The process of developing web can range from developing static page to a complex such as web based application social media sites, E-commerce. Web development includes web design, web content development, client side scripting, server side scripting, web engineering etc. Since, web development consists of several inter-related task which can be accomplish by different types of developer who focuses on different aspect of web creation. ',
                         ),
-                        Image.network(
-                            "https://readersnepal.com/storage/post-images//XwZXfpgDXN4K1Wt7ro3HCQhDRAtS4vUyo9qc2gQP.jpg"),
+                        Image.asset("images/unit_3/html.jpg"),
                         const SizedBox(
                           height: 8,
                         ),
@@ -75,9 +74,7 @@ class WebDevelopment extends StatelessWidget {
                           contents:
                               'JavaScript is a client-side scripting language used for web development along with other front-end development tool such as HTML and CSS. JavaScript helps to give dynamic behavior to our web pages such as adding animation, drop down menus, client-side validation etc. More over JS can be used for mobile apps development and game development. JavaScript is known as scripting language because it does not need to be compiled before execution, it executes in run-time environment through web browser. Several libraries of JavaScript such as React JS, Vue JS, Angular JS etc can be found and used to make more interactive, intuitive and advance web pages. JS is not only used for front-end rather it can be used in server side also. Node JS is an example of server-side JavaScript generally known as SSJS.',
                         ),
-                        Image.network(
-                          "https://readersnepal.com/storage/post-images//Es7aWxYFUc5GFtVWMq2KV4GFl3OfCCwkjZk4vvLg.jpg",
-                        ),
+                       Image.asset("images/unit_3/js.jpg"),
                         ChapterTopics(heading: 'Feature of JavaScript'),
                         HeadingDetails(
                           contents:
