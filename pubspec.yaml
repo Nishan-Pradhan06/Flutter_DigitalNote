@@ -21,6 +21,7 @@ dependencies:
   bulleted_list: ^0.0.1+0.1a
   url_launcher: ^6.1.5
   facebook_audience_network: ^1.0.1
+  provider: ^6.1.2
 
 dev_dependencies:
   flutter_test:
