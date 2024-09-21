@@ -3,7 +3,6 @@ import 'package:computer_12/providers/rating_providers.dart';
 import 'package:computer_12/views/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 

@@ -26,7 +26,7 @@ class RatingProvider with ChangeNotifier {
             style: TextStyle(fontSize: 14),
           ),
           image: Image.asset(
-            "images/icon_logo_app.png",
+            "images/appLogo.png",
             height: 100.0,
             width: 100,
           ),
