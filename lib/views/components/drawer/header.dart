@@ -25,7 +25,7 @@ class CustomDrawerHeader extends StatelessWidget {
       currentAccountPicture: CircleAvatar(
         child: ClipOval(
           child: Image.asset(
-            'images/icon_logo_app.png',
+            'images/appLogo.png',
             width: 95,
             height: 95,
           ),
