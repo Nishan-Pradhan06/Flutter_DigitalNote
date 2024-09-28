@@ -26,7 +26,7 @@ class PrivacyPolicyProvider with ChangeNotifier {
                       fontSize: 12,
                     ),
                   ),
-                  TextSpan(
+                 TextSpan(
                     style: const TextStyle(
                       fontSize: 12,
                       color: Colors.blue,
@@ -38,12 +38,14 @@ class PrivacyPolicyProvider with ChangeNotifier {
                         const url =
                             "https://github.com/Nishan-Pradhan06/Flutter_E-Note-App";
                         if (await canLaunchUrl(Uri.parse(url))) {
-                          await launchUrl(Uri.parse(url));
+                          await launchUrl(Uri.parse(url),
+                              mode: LaunchMode.externalApplication);
                         } else {
                           throw "Cannot launch URL";
                         }
                       },
                   ),
+
                   const TextSpan(
                     text:
                         "\n\nIf you'd like to contribute to the app, you can do so through our GitHub repository at.",
@@ -57,18 +59,20 @@ class PrivacyPolicyProvider with ChangeNotifier {
                       color: Colors.blue,
                       decoration: TextDecoration.underline,
                     ),
-                    text: "GITHUB",
+                    text: "GITHUB REPOSITORY.",
                     recognizer: TapGestureRecognizer()
                       ..onTap = () async {
                         const url =
                             "https://github.com/Nishan-Pradhan06/Flutter_E-Note-App";
                         if (await canLaunchUrl(Uri.parse(url))) {
-                          await launchUrl(Uri.parse(url));
+                          await launchUrl(Uri.parse(url),
+                              mode: LaunchMode.externalApplication);
                         } else {
                           throw "Cannot launch URL";
                         }
                       },
                   ),
+
                 ],
               ),
             ),
