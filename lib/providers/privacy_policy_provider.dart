@@ -21,7 +21,32 @@ class PrivacyPolicyProvider with ChangeNotifier {
                 children: [
                   const TextSpan(
                     text:
-                        "We prioritize your privacy. Our quotes app does not collect any personal data; the only information gathered is strictly limited to enhancing app functionality, such as device information and usage statistics, to improve performance and user experience. We do not store or share personally identifiable information with third parties and refrain from requesting unnecessary personal details. The quotes displayed in the app are generated using the public API from Quotable, and no data from your interaction with this API is collected or stored. While our app may include links to external sites, we do not assume responsibility for their privacy practices. Your data is safeguarded using industry-standard security measures. If you have any questions or concerns regarding our privacy policies, please contact us at.",
+                        "Our Computer Science 12 app does not collect, store, or share any personal information. It provides notes from public websites and does not need any permissions or access to your device. Some content comes from other websites, and they may have their own privacy policies. If we update this policy, changes will be posted here.\nFor any questions, contact us at ",
+                    style: TextStyle(
+                      fontSize: 12,
+                    ),
+                  ),
+                  TextSpan(
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: Colors.blue,
+                      decoration: TextDecoration.underline,
+                    ),
+                    text: "Email Us.",
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () async {
+                        const url =
+                            "https://github.com/Nishan-Pradhan06/Flutter_E-Note-App";
+                        if (await canLaunchUrl(Uri.parse(url))) {
+                          await launchUrl(Uri.parse(url));
+                        } else {
+                          throw "Cannot launch URL";
+                        }
+                      },
+                  ),
+                  const TextSpan(
+                    text:
+                        "\n\nIf you'd like to contribute to the app, you can do so through our GitHub repository at.",
                     style: TextStyle(
                       fontSize: 12,
                     ),
