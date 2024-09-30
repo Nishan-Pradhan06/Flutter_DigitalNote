@@ -2,6 +2,8 @@
 
 Welcome to the Computer Science Grade 12 E-Note-App, a Flutter-based application designed to provide comprehensive notes for computer science enthusiasts. Whether you are a student or a professional, this app aims to be your go-to resource for mastering the concepts of computer science.
 
+#### visit [website](https://appetize.io/app/android/com.example.computer_12?device=pixel8&osVersion=14.0) for more details.
+
 ## Live Preview Demo
 
 Experience the app firsthand by clicking on the following link: [Live Preview Demo](https://appetize.io/app/android/com.example.computer_12?device=pixel8&osVersion=14.0)
