@@ -74,6 +74,33 @@ class PrivacyPolicyProvider with ChangeNotifier {
                     ],
                   ),
                 ),
+                RichText(
+                  textAlign: TextAlign.justify,
+                  text: TextSpan(
+                    style: const TextStyle(
+                        color: Colors.black), // default text style
+                    children: [
+                      const TextSpan(
+                        text: "\n\nFor more information about app visit ",
+                        style: TextStyle(
+                          fontSize: 12,
+                        ),
+                      ),
+                      TextSpan(
+                        style: const TextStyle(
+                          fontSize: 12,
+                          color: Colors.blue,
+                          decoration: TextDecoration.underline,
+                        ),
+                        text: "Websites.",
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () async {
+                            launchUrlString(website);
+                          },
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
