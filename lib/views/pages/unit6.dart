@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../widgets/widgets.dart';
 import '../components/app_bar.dart';
-import '../components/banner_ad_helper.dart';
 import '../components/footer.dart';
 
 class SpM extends StatelessWidget {
@@ -613,7 +612,7 @@ class SpM extends StatelessWidget {
           ),
         ],
       ),
-         bottomNavigationBar: const BannerAdHelper(),
+        //  bottomNavigationBar: const BannerAdHelper(),
     );
   }
 

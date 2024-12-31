@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../strings/string_unit2.dart';
 import '../components/app_bar.dart';
-import '../components/banner_ad_helper.dart';
 import '../components/footer.dart';
 
 class NetWork extends StatelessWidget {
@@ -1406,7 +1405,7 @@ class NetWork extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: const BannerAdHelper(),
+      // bottomNavigationBar: const BannerAdHelper(),
     );
   }
 }

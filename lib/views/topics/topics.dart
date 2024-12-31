@@ -8,8 +8,6 @@ import 'package:computer_12/views/pages/unit5.dart';
 import 'package:computer_12/views/pages/unit6.dart';
 import 'package:computer_12/views/pages/unit7.dart';
 
-import '../components/interstitial_ad.dart';
-
 class TopicsList extends StatelessWidget {
   const TopicsList({super.key});
 
@@ -32,9 +30,11 @@ class TopicsList extends StatelessWidget {
           TopicsCards(
             title: 'DataBase',
             onPressed: () {
-              InterstitialAdManager.loadAndShowInterstitialAd(context, () {
-                navigateToPage(context, const DataBase());
-              });
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const DataBase(),
+                ),
+              );
             },
           ),
           const SizedBox(
@@ -43,9 +43,11 @@ class TopicsList extends StatelessWidget {
           TopicsCards(
             title: 'Data Communication and Networking',
             onPressed: () {
-              InterstitialAdManager.loadAndShowInterstitialAd(context, () {
-                navigateToPage(context, NetWork());
-              });
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => NetWork(),
+                ),
+              );
             },
           ),
           const SizedBox(
@@ -54,9 +56,11 @@ class TopicsList extends StatelessWidget {
           TopicsCards(
             title: 'Web Technology II',
             onPressed: () {
-              InterstitialAdManager.loadAndShowInterstitialAd(context, () {
-                navigateToPage(context, const WebDevelopment());
-              });
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const WebDevelopment(),
+                ),
+              );
             },
           ),
           const SizedBox(
@@ -65,9 +69,11 @@ class TopicsList extends StatelessWidget {
           TopicsCards(
             title: 'Programming in C',
             onPressed: () {
-              InterstitialAdManager.loadAndShowInterstitialAd(context, () {
-                navigateToPage(context, const ProgrammingC());
-              });
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => const ProgrammingC(),
+                ),
+              );
             },
           ),
           const SizedBox(
@@ -76,9 +82,11 @@ class TopicsList extends StatelessWidget {
           TopicsCards(
             title: 'Objected Oriented Programming',
             onPressed: () {
-              InterstitialAdManager.loadAndShowInterstitialAd(context, () {
-                navigateToPage(context, OoP());
-              });
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => OoP(),
+                ),
+              );
             },
           ),
           const SizedBox(
@@ -87,9 +95,11 @@ class TopicsList extends StatelessWidget {
           TopicsCards(
             title: 'Software Process Model',
             onPressed: () {
-              InterstitialAdManager.loadAndShowInterstitialAd(context, () {
-                navigateToPage(context, SpM());
-              });
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => SpM(),
+                ),
+              );
             },
           ),
           const SizedBox(
@@ -98,9 +108,11 @@ class TopicsList extends StatelessWidget {
           TopicsCards(
             title: 'Recent Trend in Technology',
             onPressed: () {
-              InterstitialAdManager.loadAndShowInterstitialAd(context, () {
-                navigateToPage(context, TechnologyChaper());
-              });
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => TechnologyChaper(),
+                ),
+              );
             },
           ),
           const SizedBox(

@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../widgets/widgets.dart';
 import '../components/app_bar.dart';
-import '../components/banner_ad_helper.dart';
 import '../components/footer.dart';
 import '../components/headings.dart';
 
@@ -74,7 +73,7 @@ class WebDevelopment extends StatelessWidget {
                           contents:
                               'JavaScript is a client-side scripting language used for web development along with other front-end development tool such as HTML and CSS. JavaScript helps to give dynamic behavior to our web pages such as adding animation, drop down menus, client-side validation etc. More over JS can be used for mobile apps development and game development. JavaScript is known as scripting language because it does not need to be compiled before execution, it executes in run-time environment through web browser. Several libraries of JavaScript such as React JS, Vue JS, Angular JS etc can be found and used to make more interactive, intuitive and advance web pages. JS is not only used for front-end rather it can be used in server side also. Node JS is an example of server-side JavaScript generally known as SSJS.',
                         ),
-                       Image.asset("images/unit_3/js.jpg"),
+                        Image.asset("images/unit_3/js.jpg"),
                         ChapterTopics(heading: 'Feature of JavaScript'),
                         HeadingDetails(
                           contents:
@@ -138,18 +137,15 @@ class WebDevelopment extends StatelessWidget {
                           height: 16.0,
                         ),
                         ChapterTopics(
-                            heading:
-                                'Local and global variable in JavaScript'),
+                            heading: 'Local and global variable in JavaScript'),
                         HeadingDetails(
                             contents:
                                 'Variables are the identifiers which holds value during our program execution. These values may change throughout the program. Depending upon the nature of data variable can hold several type of value. The type of value stored in the variable are denoted by datatype. There are two types of datatypes used in JS.'),
-                        ChapterTopics(
-                            heading: 'Data types used in JavaScript'),
+                        ChapterTopics(heading: 'Data types used in JavaScript'),
                         const ChapterHeadingMedium(
                             medium_heading: 'a) Primitive data type: '),
                         HeadingDetails(
-                            contents:
-                                'They are inbuilt datatype used in JS.'),
+                            contents: 'They are inbuilt datatype used in JS.'),
                         Table(
                           border: TableBorder.all(),
                           columnWidths: const {
@@ -339,8 +335,7 @@ class WebDevelopment extends StatelessWidget {
                           contents:
                               "In above example, the variable 'a' is declared outside the two function disp() and cisp(). So, it can be used by both function block. When user press Click me then, disp() function is called, this function will display the value of 'a' i.e. 5 which is declared outside of the function. Similarly, when user press Push me then, cisp() function is called, this function will also display the value of 'a' i.e. 5. This is because variable ‘a’ is declared outside of function or block which can be used by any number of function or block. Note: Block represent the statement written inside curly bracket { }",
                         ),
-                        ChapterTopics(
-                            heading: 'form validation in javascript'),
+                        ChapterTopics(heading: 'form validation in javascript'),
                         HeadingDetails(
                             contents:
                                 'Once the client or user entered all the necessary data and  press the submit button then all the data entered by the client must be correct and valid. Thus, form validation is the mechanism which allows client to enter only the correct information which can be send to the server. JavaScript provides easy method for form validation at client side. Forma validation can be done in two ways: Basic validation which checks whether all the required fields are filled properly or not kept empty whereas, Data Format validation check whether the data entered into the form field are logically correct.'),
@@ -348,8 +343,7 @@ class WebDevelopment extends StatelessWidget {
                           heading: 'Basic form validation in JavaScript',
                         ),
                         Image.asset("images/unit_3/e8.png"),
-                        ChapterTopics(
-                            heading: 'DDL DML and DCL with example'),
+                        ChapterTopics(heading: 'DDL DML and DCL with example'),
                         HeadingDetails(
                             contents:
                                 'SQL stands for Structured Query Language. It is an international standard database query language introduced and developed by IBM in early 1970s. It was able to control relational database. SQL is not a complete programming language rather only used for communicating with database. SQL has several statement for data definition, data manipulation and data control generally known as DDL, DML and DCL respectively. A query is a request to a DBMS for the retrieval, modification, insertion and deletion of the data from database.'),
@@ -429,7 +423,7 @@ class WebDevelopment extends StatelessWidget {
           )
         ],
       ),
-     bottomNavigationBar: const BannerAdHelper(),
+      //  bottomNavigationBar: const BannerAdHelper(),
     );
   }
 }
